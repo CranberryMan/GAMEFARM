@@ -42,9 +42,11 @@
 				id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
 				aria-haspopup="true" aria-expanded="false"> Game </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-					<a class="dropdown-item" href="#">Action</a> <a
-						class="dropdown-item" href="#">Puzzle</a> <a class="dropdown-item"
-						href="#">Others</a>
+					<a class="dropdown-item" href="./snake.jsp">Snake</a>
+					<a class="dropdown-item" href="./tetris.jsp">Tetris</a>
+					<a class="dropdown-item" href="./dinorun.jsp">DinoRun</a>
+					<a class="dropdown-item" href="./minesweeper.jsp">Mine</a>
+					<a class="dropdown-item" href="#">Others</a>
 				</div></li>
 			<li class="nav-item active"><a class="nav-link" href="#">Ranking</a></li>
       </ul>

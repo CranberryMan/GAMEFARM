@@ -1,14 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    <%@ page import="java.sql.*" %>
-    
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page pageEncoding="utf-8"%>
+
+<%@ page import="java.sql.*"%>
+
 <%
 Connection conn = null;
 try {
@@ -23,8 +16,6 @@ try {
 	out.println("DB연결 실패<br>");
 	out.println("오류 : " + e.getMessage());
 } finally {
-	
+
 }
 %>
-</body>
-</html>

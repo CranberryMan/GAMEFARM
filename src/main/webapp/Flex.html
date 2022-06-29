@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Flex test</title>
+	<style>
+		ul{list-style-type:none; width:1280px;}
+
+		.container{width:100%; display:flex; justify-content:center;}
+
+		#flex1{display:flex;}
+
+		#flex2{display:flex; justify-content:flex-start;}
+
+		#flex3{display:flex; justify-content:flex-end;}
+
+		#flex4{display:flex; justify-content:space-between;}
+
+		#flex5{display:flex; justify-content:space-around;}
+
+		#flex6{display:flex; justify-content:space-evenly;}
+
+
+		.align{height: 100px;}
+		#flex7{display:flex; align-items:flex-start;}
+
+		#flex8{display:flex; align-items:flex-end;}
+
+		#flex9{display:flex; align-items:center;}
+
+		#flex10{display:flex; align-items:baseline;}
+
+		#flex11{display:flex; align-items:stretch;}
+	</style>
+</head>
+<body>
+
+<div class="container">
+	<ul id="original">
+		<li>전사무엘</li>
+		<li>무표형</li>
+		<li>최건호</li>
+		<li>장석영</li>
+		<li>김예성</li>
+		<li>심재성</li>
+		<li>김미준</li>
+	</ul><!-- 그냥 평범하기 짝이 없는 ul -->
+</div>
+
+<!-- 어느 엘리먼트의 display를 flex로 하면, 그 엘리먼트 기준, 바로 자식 엘리먼트들(아이템들)의 배치를 질서있게 정할 수 있습니다. -->
+
+<!-- flex가 된 아이템들은 가로 방향으로 배치되며, 자신이 가진 내용물의 width만큼만 공간을 차지합니다. height는 컨테이너의 높이를 따릅니다. -->
+<div class="container">
+	<ul id="flex1">
+		<li>전사무엘</li>
+		<li>무표형</li>
+		<li>최건호</li>
+		<li>장석영</li>
+		<li>김예성</li>
+		<li>심재성</li>
+		<li>김미준</li>
+	</ul><!-- 그냥 flex만 쓴 ul -->
+</div>
+
+<!-- flex가 된 속성에서 쓸 수 있는 justify-content : 아이템들의 가로 배치를 결정합니다. -->
+<!-- justify-content : flex-start   아이템들을 시작점으로 정렬 -->
+<!-- justify-content : center   아이템들을 가운데로 정렬. -->
+<div class="container">
+	<ul id="flex2" class="justify-flexstart">
+		<li>전사무엘</li>
+		<li>무표형</li>
+		<li>최건호</li>
+		<li>장석영</li>
+		<li>김예성</li>
+		<li>심재성</li>
+		<li>김미준</li>
+	</ul>
+</div>
+
+<!-- justify-content : flex-end   아이템들을 끝점으로 정렬 -->
+<div class="container">
+	<ul id="flex3" class="justify-flexend">
+		<li>전사무엘</li>
+		<li>무표형</li>
+		<li>최건호</li>
+		<li>장석영</li>
+		<li>김예성</li>
+		<li>심재성</li>
+		<li>김미준</li>
+	</ul>
+</div>
+
+<!-- justify-content : space-between   아이템 사이에 균일한 간격을 만들어 줌 -->
+<div class="container">
+	<ul id="flex4" class="justify-spacebetween">
+		<li>전사무엘</li>
+		<li>무표형</li>
+		<li>최건호</li>
+		<li>장석영</li>
+		<li>김예성</li>
+		<li>심재성</li>
+		<li>김미준</li>
+	</ul>
+</div>
+
+<!-- justify-content : space-around   아이템의 둘레에 균일한 간격을 만들어 줌 -->
+<div class="container">
+	<ul id="flex5" class="justify-spacearound">
+		<li>전사무엘</li>
+		<li>무표형</li>
+		<li>최건호</li>
+		<li>장석영</li>
+		<li>김예성</li>
+		<li>심재성</li>
+		<li>김미준</li>
+	</ul>
+</div>
+
+<!-- justify-content : space-evenly   아이템들의 사이와 양끝에 균일한 간격을 만들어 줌 -->
+<div class="container">
+	<ul id="flex6" class="justify-spaceevenly">
+		<li>전사무엘</li>
+		<li>무표형</li>
+		<li>최건호</li>
+		<li>장석영</li>
+		<li>김예성</li>
+		<li>심재성</li>
+		<li>김미준</li>
+	</ul>
+</div>
+
+<!-- align-items : 아이템들의 수직축 방향 정렬 결정 -->
+<!-- align-items : flex-start   아이템들을 시작점으로 정렬 -->
+<div class="container">
+	<div id="flex7" class="align flex-start">
+		<div><h1>전사무엘</h1></div>
+		<div><h2>무표형</h2></div>
+		<div><h3>최건호</h3></div>
+		<div><h1>장석영</h1></div>
+		<div><h4>김예성</h4></div>
+		<div><h2>심재성</h2></div>
+		<div><h5>김미준</h5></div>
+	</div>
+</div>
+
+<!-- align-items : flex-end  아이템들을 끝점으로 정렬 -->
+<div class="container">
+	<div id="flex8" class="align flex-end">
+		<div><h1>전사무엘</h1></div>
+		<div><h2>무표형</h2></div>
+		<div><h3>최건호</h3></div>
+		<div><h1>장석영</h1></div>
+		<div><h4>김예성</h4></div>
+		<div><h2>심재성</h2></div>
+		<div><h5>김미준</h5></div>
+	</div>
+</div>
+
+<!-- align-items : center   아이템들을 중앙으로 정렬 -->
+<div class="container">
+	<div id="flex9" class="align center">
+		<div><h1>전사무엘</h1></div>
+		<div><h2>무표형</h2></div>
+		<div><h3>최건호</h3></div>
+		<div><h1>장석영</h1></div>
+		<div><h4>김예성</h4></div>
+		<div><h2>심재성</h2></div>
+		<div><h5>김미준</h5></div>
+	</div>
+</div>
+
+<!-- align-items : baseline   아이템들을 베이스라인 기준으로 정렬 -->
+<div class="container">
+	<div id="flex10" class="align baseline">
+		<div><h1>전사무엘</h1></div>
+		<div><h2>무표형</h2></div>
+		<div><h3>최건호</h3></div>
+		<div><h1>장석영</h1></div>
+		<div><h4>김예성</h4></div>
+		<div><h2>심재성</h2></div>
+		<div><h5>김미준</h5></div>
+	</div>
+</div>
+
+<!-- align-items : stretch   아이템들이 수직축 방향으로 늘어남 -->
+<div class="container">
+	<div id="flex11" class="align stretch">
+		<div><h1>전사무엘</h1></div>
+		<div><h2>무표형</h2></div>
+		<div><h3>최건호</h3></div>
+		<div><h1>장석영</h1></div>
+		<div><h4>김예성</h4></div>
+		<div><h2>심재성</h2></div>
+		<div><h5>김미준</h5></div>
+	</div>
+</div>
+
+</body>
+</html>
