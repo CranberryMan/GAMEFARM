@@ -24,6 +24,7 @@
 </head>
 <body style="background-color:#0000FF;">
 <%@ include file="navbar.jsp"%>
+<%@ include file="dbconn.jsp"%>
 	<img src="res/img/banner_test.png" width="100%" height="auto" border=0>
 	<div class="container">
 		<div class="row">
@@ -41,8 +42,32 @@
 	</div>
 
 	<div style="text-align: center;">여기에 게임 소개가 들어갑니다.</div>
-	<div style="text-align: center;">여기에 게임별 랭킹이 들어갑니다.</div>
-	<div style="text-align: center;">여기에 간이 덧글창이 개설됩니다.</div>
+<div style = "text-align : center; justify-content : center ; align-items:center; ">
+	<%
+		String sql = "select * from tetrisrank order by score desc limit 3;";
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		ResultSet rs = pstmt.executeQuery();
+		%><table style="margin-left:auto; margin-right:auto;">
+		<thead>
+		<tr>
+		<th>순위</th>
+		<th>유저</th>
+		<th>점수</th>
+		</tr>
+		</thead><tbody>
+		<%
+		int count = 1;
+		while(rs.next()){%>
+			<tr>
+			<td><%= count %></td>
+			<td><%=rs.getString(1) %></td>
+			<td><%=rs.getInt(2) %></td>
+			</tr>
+		<% count++;}
+		%></tbody></table><%
+	 %>
+		여기에 게임별 랭킹이 들어갑니다.
+	</div>	<div style="text-align: center;">여기에 간이 덧글창이 개설됩니다.</div>
 	<%@ include file="footer.jsp"%>
 </body>
 </html>

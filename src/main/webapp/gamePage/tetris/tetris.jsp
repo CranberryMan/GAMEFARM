@@ -219,7 +219,17 @@ html {
 	                this.stageTopPadding + this.blockY * this.cellSize,
 	                this.currentBlock, this.blockAngle, this.stageCanvas);
 	        }
-	        setTimeout(this.mainLoop.bind(this), 500);
+	        if(this.deletedLines >= 6){
+	        	setTimeout(this.mainLoop.bind(this), 100);
+            }
+	        else if(this.deletedLines >= 3){
+	        	setTimeout(this.mainLoop.bind(this), 300);
+	        	}
+	        else{
+	        	setTimeout(this.mainLoop.bind(this), 500);	
+	        }
+	        
+	        
 	    }
 
 	    createNewBlock() {
@@ -232,6 +242,9 @@ html {
 	        if (!this.checkBlockMove(this.blockX, this.blockY, this.currentBlock, this.blockAngle)) {
 	            let messageElem = document.getElementById("message");
 	            messageElem.innerText = "GAME OVER";
+	            var score = String(this.deletedLines);
+	            document.getElementById('userScore').value = score;
+	            document.scoreForm.submit();
 	            return false;
 	        }
 	        return true;
@@ -250,10 +263,6 @@ html {
 	    fallBlock() {
 	        if (this.checkBlockMove(this.blockX, this.blockY + 1, this.currentBlock, this.blockAngle)) {
 	            this.blockY++;
-	            if(this.deletedLines >= 3){
-	            	this.blockY++;
-	            	this.blockY++;
-	            }
 	        } else {
 	            this.fixBlock(this.blockX, this.blockY, this.currentBlock, this.blockAngle);
 	            this.currentBlock = null;
@@ -414,6 +423,11 @@ html {
 			</table>
 	</span>
 	</span>
+	<form name="scoreForm" method="post" action="./gamePage/tetris/tetrisRankProcess.jsp" target="blankifr">
+	<p><input type="hidden" placeholder=""
+			style="width: 220px; height: 40px; font-size: 20px;" id="userScore" name="finalScore">
+</form>
+    <iframe name='blankifr' style='display:none;'></iframe>
 </div>
 <script>
 		var tetris = new Tetris();

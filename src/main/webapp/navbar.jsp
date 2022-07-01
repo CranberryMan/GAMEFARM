@@ -25,7 +25,10 @@
 	</div>
 </nav>
  -->
- 
+ <%
+    String loginID = (String)session.getAttribute("loginID");
+    boolean login = loginID == null ? false : true;
+%>
  <!-- 이게 진짜 나븨바 -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom sticky-top">
   <div class="container">
@@ -35,8 +38,20 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
+      <%
+      if(login == false){
+    	  %><li class="nav-item active"><a class="nav-link" href="./login.jsp">LOGIN</a></li><%
+      }
+      else{
+    	  %>
+    	  <li class="nav-item active"><a class="nav-link" href="./logout.jsp">LOGOUT</a></li>
+    	  <%
+      }
+      %>
+			
 			<li class="nav-item active"><a class="nav-link" href="./join.jsp">Gaip</a></li>
 			<li class="nav-item active"><a class="nav-link" href="#">Introduce</a></li>
+
 			<li class="nav-item dropdown active"><a
 				class="nav-link dropdown-toggle" href="#"
 				id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"

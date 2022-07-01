@@ -18,6 +18,7 @@
 
 </head>
 <body>
+
 	<%@ include file="navbar.jsp"%>
 
 
