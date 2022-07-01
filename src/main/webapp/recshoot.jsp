@@ -25,8 +25,9 @@
 			<div class="col-md-3"> 임시 지정 영역 </div>
 		</div>
 	
-		<div class="row" id = "game" style="justify-content : center ; align-items:center;">
-			<%@ include file="gamePage/snake/snake.jsp"%>
+		<div class="row" id = "game" style= "margin:auto; justify-content : center ; align-items:center;">
+			<iframe src="gamePage/recshoot/recshoot.jsp" width="530" height="760" frameborder="0" framespacing="0" marginheight="0" marginwidth="0" scrolling="no"  vspace="0" ></iframe>
+	
 	</div>
 	
 	</div>
@@ -36,7 +37,7 @@
 	</div>
 	<div style = "text-align : center; justify-content : center ; align-items:center; ">
 	<%
-		String sql = "select * from snakeRank order by score desc limit 3;";
+		String sql = "select * from recshootRank order by score desc limit 3;";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
 		%><table style="margin-left:auto; margin-right:auto;">
@@ -62,7 +63,7 @@
 	</div>
 	<div style = "text-align : center;">
 		<%
-		sql = "select * from snakechat order by date asc;";
+		sql = "select * from recshootchat order by date asc;";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		%><table style="margin-left:auto; margin-right:auto;" border=1>
@@ -81,7 +82,7 @@
 		<%}
 		%></tbody></table><%
 	 %><br>
-	 <form name="chatForm" method="post" action="./gamePage/snake/snakeChatProcess.jsp">
+	 <form name="chatForm" method="post" action="./gamePage/recshoot/recshootChatProcess.jsp">
 				<p>
 					<input type="text" placeholder="하고싶은말"
 						style="width: 420px; height: 40px; font-size: 20px;" name="chat">

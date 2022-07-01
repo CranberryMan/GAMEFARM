@@ -5,12 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>GAMEFARM</title>
-<!--
-<script src="res/js/jquery-3.6.0.min.js"></script>
-<script src="res/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="res/css/bootstrap.min.css">
-<script src="res/js/popper.min.js"></script>
--->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 	integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
@@ -29,24 +23,26 @@
 
 </head>
 <body>
-
-	<%@ include file="navbar.jsp"%>
-				<img src="res/img/banner.png" width="100%" height="auto" border=0>
-
-
+<%@ include file="navbar.jsp"%>
+	<img src="res/img/banner_test.png" width="100%" height="auto" border=0>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
+
+					이곳에 조원 소개 및
+					이 곳이 뭘 하는 곳인지 등등 게임팜에 대한 소개를 작성합니다.
+					
+					누가?
+					지금 보고 있는 당신이.
+			
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-9">여기도 뭔가 들어가??</div>
-			<div class="col-md-3">광고영역</div>
+			<div class="col-md-9"></div>
+			<div class="col-md-3"></div>
 		</div>
 
-		<%@ include file="main/main.jsp"%>
 	</div>
-
 	<%@ include file="footer.jsp"%>
 </body>
 </html>

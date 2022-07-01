@@ -20,7 +20,7 @@ ArrayList desc = new ArrayList<String>();
 ArrayList link = new ArrayList<String>();
 %>
 <%
-String sql = "select * from gamelist";
+String sql = "select * from gamelist order by soonseo desc";
 PreparedStatement pstmt = conn.prepareStatement(sql);
 ResultSet rs = pstmt.executeQuery();
 int gameCount = 0;
@@ -47,13 +47,10 @@ for (int i = 0; i < line; i++) {
 			<div class="col-md-4">
 				<h2><%=name.get(gameCount)%></h2>
 				<p>
-					<a href="<%=link.get(gameCount)%>"><img src="<%=img.get(gameCount)%>" width="380" height="300"></a>
+					<a href="<%=link.get(gameCount)%>"><img src="<%=img.get(gameCount)%>" width="auto" height="300" border=0></a>
 				</p>
 				<p><%=desc.get(gameCount)%></p>
-				<p>
-					<a class="btn" href="<%=link.get(gameCount)%>"> <%=name.get(gameCount)%>»
-					</a>
-				</p>
+
 			</div>
 			<%
 			gameCount++;
@@ -74,13 +71,9 @@ if (nameoji >= 1) {
 			<div class="col-md-4">
 				<h2><%=name.get(gameCount)%></h2>
 				<p>
-					<a href="<%=link.get(gameCount)%>"><img src="<%=img.get(gameCount)%>" width="380" height="300"></a>
+					<a href="<%=link.get(gameCount)%>"><img src="<%=img.get(gameCount)%>" width="auto" height="300" border=0></a>
 				</p>
 				<p><%=desc.get(gameCount)%></p>
-				<p>
-					<a class="btn" href="<%=link.get(gameCount)%>"> <%=name.get(gameCount)%>»
-					</a>
-				</p>
 			</div>
 			<%
 			gameCount++;

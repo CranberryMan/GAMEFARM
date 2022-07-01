@@ -22,7 +22,7 @@
 	crossorigin="anonymous"></script>
 
 </head>
-<body style="background-color:#0000FF;">
+<body style="background-color:#8f97bf;">
 <%@ include file="navbar.jsp"%>
 <%@ include file="dbconn.jsp"%>
 	<img src="res/img/banner_test.png" width="100%" height="auto" border=0>
@@ -67,7 +67,36 @@
 		%></tbody></table><%
 	 %>
 		여기에 게임별 랭킹이 들어갑니다.
-	</div>	<div style="text-align: center;">여기에 간이 덧글창이 개설됩니다.</div>
+	</div>
+	<div style = "text-align : center;">
+		<%
+		sql = "select * from tetrischat order by date asc;";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		%><table style="margin-left:auto; margin-right:auto;" border=1>
+		<thead>
+		<tr>
+		<th>닉네임</th>
+		<th>하고싶은 말</th>
+		</tr>
+		</thead><tbody>
+		<%
+		while(rs.next()){%>
+			<tr>
+			<td><%=rs.getString(1) %></td>
+			<td><%=rs.getString(2) %></td>
+			</tr>
+		<%}
+		%></tbody></table><%
+	 %><br>
+	 <form name="chatForm" method="post" action="./gamePage/tetris/tetrisChatProcess.jsp">
+				<p>
+					<input type="text" placeholder="하고싶은말"
+						style="width: 420px; height: 40px; font-size: 20px;" name="chat">
+				<p>
+					<input type="submit" value="작성">
+			</form>
+	</div>
 	<%@ include file="footer.jsp"%>
 </body>
 </html>

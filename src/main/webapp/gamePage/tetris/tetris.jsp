@@ -99,63 +99,63 @@ html {
 	                        [[0, -1], [0, 0], [0, 1], [0, 2]],
 	                        [[-1, 0], [0, 0], [1, 0], [2, 0]],
 	                        [[0, -1], [0, 0], [0, 1], [0, 2]]],
-	                color: "rgb(0, 255, 255)",
+	                color: "rgb(116, 125, 177)",
 	                highlight: "rgb(255, 255, 255)",
-	                shadow: "rgb(0, 128, 128)"
+	                shadow: "rgb(0, 0, 0)"
 	            },
 	            {
 	                shape: [[[0, 0], [1, 0], [0, 1], [1, 1]],
 	                        [[0, 0], [1, 0], [0, 1], [1, 1]],
 	                        [[0, 0], [1, 0], [0, 1], [1, 1]],
 	                        [[0, 0], [1, 0], [0, 1], [1, 1]]],
-	                color: "rgb(255, 255, 0)",
+	                color: "rgb(166, 79, 112)",
 	                highlight: "rgb(255, 255, 255)",
-	                shadow: "rgb(128, 128, 0)"
+	                shadow: "rgb(0, 0, 0)"
 	            },
 	            {
 	                shape: [[[0, 0], [1, 0], [-1, 1], [0, 1]],
 	                        [[-1, -1], [-1, 0], [0, 0], [0, 1]],
 	                        [[0, 0], [1, 0], [-1, 1], [0, 1]],
 	                        [[-1, -1], [-1, 0], [0, 0], [0, 1]]],
-	                color: "rgb(0, 255, 0)",
+	                color: "rgb(141, 208, 163)",
 	                highlight: "rgb(255, 255, 255)",
-	                shadow: "rgb(0, 128, 0)"
+	                shadow: "rgb(0, 0, 0)"
 	            },
 	            {
 	                shape: [[[-1, 0], [0, 0], [0, 1], [1, 1]],
 	                        [[0, -1], [-1, 0], [0, 0], [-1, 1]],
 	                        [[-1, 0], [0, 0], [0, 1], [1, 1]],
 	                        [[0, -1], [-1, 0], [0, 0], [-1, 1]]],
-	                color: "rgb(255, 0, 0)",
+	                color: "rgb(238, 227, 100)",
 	                highlight: "rgb(255, 255, 255)",
-	                shadow: "rgb(128, 0, 0)"
+	                shadow: "rgb(0, 0, 0)"
 	            },
 	            {
 	                shape: [[[-1, -1], [-1, 0], [0, 0], [1, 0]],
 	                        [[0, -1], [1, -1], [0, 0], [0, 1]],
 	                        [[-1, 0], [0, 0], [1, 0], [1, 1]],
 	                        [[0, -1], [0, 0], [-1, 1], [0, 1]]],
-	                color: "rgb(0, 0, 255)",
+	                color: "rgb(177, 130, 204)",
 	                highlight: "rgb(255, 255, 255)",
-	                shadow: "rgb(0, 0, 128)"
+	                shadow: "rgb(0, 0, 0)"
 	            },
 	            {
 	                shape: [[[1, -1], [-1, 0], [0, 0], [1, 0]],
 	                        [[0, -1], [0, 0], [0, 1], [1, 1]],
 	                        [[-1, 0], [0, 0], [1, 0], [-1, 1]],
 	                        [[-1, -1], [0, -1], [0, 0], [0, 1]]],
-	                color: "rgb(255, 165, 0)",
+	                color: "rgb(239, 154, 58)",
 	                highlight: "rgb(255, 255, 255)",
-	                shadow: "rgb(128, 82, 0)"
+	                shadow: "rgb(0, 0, 0)"
 	            },
 	            {
 	                shape: [[[0, -1], [-1, 0], [0, 0], [1, 0]],
 	                        [[0, -1], [0, 0], [1, 0], [0, 1]],
 	                        [[-1, 0], [0, 0], [1, 0], [0, 1]],
 	                        [[0, -1], [-1, 0], [0, 0], [0, 1]]],
-	                color: "rgb(255, 0, 255)",
+	                color: "rgb(75, 90, 83)",
 	                highlight: "rgb(255, 255, 255)",
-	                shadow: "rgb(128, 0, 128)"
+	                shadow: "rgb(0, 0, 0)"
 	            }
 	        ];
 	        return blocks;
@@ -219,7 +219,10 @@ html {
 	                this.stageTopPadding + this.blockY * this.cellSize,
 	                this.currentBlock, this.blockAngle, this.stageCanvas);
 	        }
-	        if(this.deletedLines >= 6){
+	        if(this.deletedLines >= 9){
+	        	setTimeout(this.mainLoop.bind(this), 35);
+            }
+	        else if(this.deletedLines >= 6){
 	        	setTimeout(this.mainLoop.bind(this), 100);
             }
 	        else if(this.deletedLines >= 3){
@@ -411,6 +414,12 @@ html {
 			<div class="tetris-panel-container-padding"></div>
 			<table class="tetris-button-panel">
 				<tr>
+					<td colspan="3" style="text-align:center;">Made By Moo-Moo</td>
+				</tr>
+				<tr>
+					<td colspan="3" style="text-align:center;">SPACE is DROP</td>
+				</tr>
+				<tr>
 					<td></td>
 					<td id="tetris-rotate-button" class="tetris-button">↻</td>
 					<td></td>
@@ -423,11 +432,14 @@ html {
 			</table>
 	</span>
 	</span>
-	<form name="scoreForm" method="post" action="./gamePage/tetris/tetrisRankProcess.jsp" target="blankifr">
-	<p><input type="hidden" placeholder=""
-			style="width: 220px; height: 40px; font-size: 20px;" id="userScore" name="finalScore">
-</form>
-    <iframe name='blankifr' style='display:none;'></iframe>
+	<form name="scoreForm" method="post"
+		action="./gamePage/tetris/tetrisRankProcess.jsp" target="blankifr">
+		<p>
+			<input type="hidden" placeholder=""
+				style="width: 220px; height: 40px; font-size: 20px;" id="userScore"
+				name="finalScore">
+	</form>
+	<iframe name='blankifr' style='display: none;'></iframe>
 </div>
 <script>
 		var tetris = new Tetris();

@@ -27,8 +27,14 @@
  -->
  <%
     String loginID = (String)session.getAttribute("loginID");
+ 	String loginNICK = (String)session.getAttribute("loginNICK");
     boolean login = loginID == null ? false : true;
 %>
+<style>
+.navbar-default {
+  background-color: #e74c3c;
+}
+</style>
  <!-- 이게 진짜 나븨바 -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom sticky-top">
   <div class="container">
@@ -44,13 +50,15 @@
       }
       else{
     	  %>
-    	  <li class="nav-item active"><a class="nav-link" href="./logout.jsp">LOGOUT</a></li>
+    	  <li class="nav-item active"><a class="nav-link" href="./logout.jsp"><%= loginNICK %> LOGOUT</a></li>
     	  <%
       }
       %>
-			
-			<li class="nav-item active"><a class="nav-link" href="./join.jsp">Gaip</a></li>
-			<li class="nav-item active"><a class="nav-link" href="#">Introduce</a></li>
+      <%
+      if(login == false){
+    	  %><li class="nav-item active"><a class="nav-link" href="./join.jsp">Gaip</a></li><%
+      }
+      %>	
 
 			<li class="nav-item dropdown active"><a
 				class="nav-link dropdown-toggle" href="#"
@@ -59,11 +67,12 @@
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="./snake.jsp">Snake</a>
 					<a class="dropdown-item" href="./tetris.jsp">Tetris</a>
-					<a class="dropdown-item" href="./dinorun.jsp">DinoRun</a>
+					<a class="dropdown-item" href="./2048.jsp">2048</a>
+					<a class="dropdown-item" href="./recshoot.jsp">Death and Horror</a>
 					<a class="dropdown-item" href="./minesweeper.jsp">Mine</a>
 					<a class="dropdown-item" href="#">Others</a>
 				</div></li>
-			<li class="nav-item active"><a class="nav-link" href="#">Ranking</a></li>
+			<li class="nav-item active"><a class="nav-link" href="./introduce.jsp">Introduce</a></li>
       </ul>
     </div>
   </div>

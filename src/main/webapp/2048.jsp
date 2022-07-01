@@ -11,7 +11,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style ="background-color: #ccb28d">
 	<%@ include file="dbconn.jsp"%>
 	<%@ include file="navbar.jsp"%>
 	<img src ="res/img/banner_test.png" width="100%" height="auto" border=0>
@@ -25,18 +25,20 @@
 			<div class="col-md-3"> 임시 지정 영역 </div>
 		</div>
 	
-		<div class="row" id = "game" style="justify-content : center ; align-items:center;">
-			<%@ include file="gamePage/snake/snake.jsp"%>
-	</div>
+		
 	
 	</div>
+	<div  style = "text-align : center; justify-content : center ; align-items:center; ">
+	<iframe src="gamePage/2048/2048.jsp" width="400" height="400" frameborder="0" framespacing="0" marginheight="0" marginwidth="0" scrolling="no"  vspace="0" ></iframe>
+	</div>
+		
 	
 	<div style = "text-align : center;">
 		여기에 게임 소개가 들어갑니다.
 	</div>
 	<div style = "text-align : center; justify-content : center ; align-items:center; ">
 	<%
-		String sql = "select * from snakeRank order by score desc limit 3;";
+		String sql = "select * from 2048Rank order by score desc limit 3;";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
 		%><table style="margin-left:auto; margin-right:auto;">
@@ -62,7 +64,7 @@
 	</div>
 	<div style = "text-align : center;">
 		<%
-		sql = "select * from snakechat order by date asc;";
+		sql = "select * from 2048chat order by date asc;";
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		%><table style="margin-left:auto; margin-right:auto;" border=1>
@@ -81,7 +83,7 @@
 		<%}
 		%></tbody></table><%
 	 %><br>
-	 <form name="chatForm" method="post" action="./gamePage/snake/snakeChatProcess.jsp">
+	 <form name="chatForm" method="post" action="./gamePage/2048/2048ChatProcess.jsp">
 				<p>
 					<input type="text" placeholder="하고싶은말"
 						style="width: 420px; height: 40px; font-size: 20px;" name="chat">

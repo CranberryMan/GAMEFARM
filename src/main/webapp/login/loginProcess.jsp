@@ -15,6 +15,7 @@ ResultSet rs = pstmt.executeQuery();
 while (rs.next()) {
 	if (pw.equals(rs.getString(2))) {
         session.setAttribute("loginID", id);
+        session.setAttribute("loginNICK", rs.getString(3));
 		check++;
 	}
 }
