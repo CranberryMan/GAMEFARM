@@ -20,12 +20,16 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
 	integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 	crossorigin="anonymous"></script>
-
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+</style>
 </head>
-<body style="background-color:#8f97bf;">
+<body style="background-color:#8f97bf; font-family: 'Gugi', cursive;">
 <%@ include file="navbar.jsp"%>
 <%@ include file="dbconn.jsp"%>
-	<img src="res/img/banner_test.png" width="100%" height="auto" border=0>
+	<img src="res/img/new_banner.png" width="100%" height="auto" border=0>
+				<!-- tetris banner 만들어서 수정할 것 -->	
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12"></div>
@@ -35,19 +39,31 @@
 			<div class="col-md-3"></div>
 		</div>
 
-		<div class="row" style="justify-content: center; align-items: center;">
-			<%@ include file="gamePage/tetris/tetris.jsp"%>
+		<div class="row" id="game"
+			style="margin: auto; justify-content: center; align-items: center;">
+			<iframe src="gamePage/tetris/tetris.jsp" width="440" height="520"
+				frameborder="0" framespacing="0" marginheight="0" marginwidth="0"
+				scrolling="no"   vspace="0"></iframe>
 		</div>
+		
 
 	</div>
 
-	<div style="text-align: center;">여기에 게임 소개가 들어갑니다.</div>
+	<div style="text-align: center;">
+	제목이 왜 이럴까요?<br>
+	이유는 해 보시면 압니다...!<br>
+	목표는 라인 <b style="color:red;">20줄</b> 클리어!<br>
+	　<br>
+	<hr>
+	</div>
 <div style = "text-align : center; justify-content : center ; align-items:center; ">
 	<%
 		String sql = "select * from tetrisrank order by score desc limit 3;";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
-		%><table style="margin-left:auto; margin-right:auto;">
+		%>
+		<br>
+		<table style="margin-left:auto; margin-right:auto;" border = 1>
 		<thead>
 		<tr>
 		<th>순위</th>
@@ -65,8 +81,9 @@
 			</tr>
 		<% count++;}
 		%></tbody></table><%
-	 %>
-		여기에 게임별 랭킹이 들어갑니다.
+	 %><br><br>
+	 랭킹은 최대 3위까지 표시됩니다.
+	 <br><hr>
 	</div>
 	<div style = "text-align : center;">
 		<%

@@ -2,7 +2,33 @@
 
 <script type="text/javascript">
 	function check(){
-		var form = document.gaipForm;		
+		var form = document.gaipForm;	
+		
+
+        if (form.id.value == "") {
+            alert("아이디를 입력해주세요");
+            form.id.focus();
+            return false;
+        }
+ 
+        if (form.pw.value == "") {
+            alert("비밀번호를 입력해주세요");
+            form.pw.focus();
+            
+            return false;
+        }
+        if (form.pw2.value == "") {
+            alert("비밀번호 확인을 입력해주세요");
+            form.pw2.focus();
+            
+            return false;
+        }
+        if (form.nick.value == "") {
+            alert("닉네임을 입력해주세요");
+            form.nick.focus();
+            
+            return false;
+        }
 		
 		form.submit();
 	}

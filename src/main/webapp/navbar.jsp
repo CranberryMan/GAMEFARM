@@ -31,12 +31,14 @@
     boolean login = loginID == null ? false : true;
 %>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
 .navbar-default {
   background-color: #e74c3c;
 }
 </style>
  <!-- 이게 진짜 나븨바 -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom sticky-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary border-bottom sticky-top" style="font-family: 'Black Han Sans', sans-serif; background-color:#e74c3c;">
   <div class="container">
     <div class="navbar-brand"><a href="./index.jsp"><img src="./res/img/logo.png"></a></div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

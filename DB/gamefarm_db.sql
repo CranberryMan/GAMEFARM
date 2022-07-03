@@ -252,7 +252,7 @@ CREATE TABLE `tetrischat` (
 
 LOCK TABLES `tetrischat` WRITE;
 /*!40000 ALTER TABLE `tetrischat` DISABLE KEYS */;
-INSERT INTO `tetrischat` VALUES ('무무~','하고싶은 말 테스트','2022-07-01 15:26:44'),('무무~','잘 작동하는 것 같습니다?','2022-07-01 15:26:53'),('무무~','구래서','2022-07-01 15:27:04'),('무무~','잘 되는것 갓아요','2022-07-01 15:27:09');
+INSERT INTO `tetrischat` VALUES ('무무~','하고싶은 말 테스트','2022-07-01 15:26:44'),('무무~','잘 작동하는 것 같습니다?','2022-07-01 15:26:53'),('무무~','구래서','2022-07-01 15:27:04'),('무무~','잘 되는것 갓아요','2022-07-01 15:27:09'),('관리자','누가 만들었냐 미쳤냐','2022-07-01 18:31:40');
 /*!40000 ALTER TABLE `tetrischat` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -288,4 +288,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-07-01 18:25:12
+-- Dump completed on 2022-07-03 18:21:57

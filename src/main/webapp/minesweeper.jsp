@@ -20,19 +20,22 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
 	integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 	crossorigin="anonymous"></script>
-
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+</style>
 </head>
-<body>
+<body style ="background-color: #ccb28d ; font-family: 'Gugi', cursive;">
 	<%@ include file="navbar.jsp"%>
 	<%@ include file="dbconn.jsp"%>
-
+	<img src ="res/img/new_banner.png" width="100%" height="auto" border=0>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">배너영역</div>
+			<div class="col-xs-12"></div>
 		</div>
 		<div class="row">
-			<div class="col-md-9">여기도 뭔가 들어가??</div>
-			<div class="col-md-3">광고영역</div>
+			<div class="col-md-9"></div>
+			<div class="col-md-3"></div>
 		</div>
 
 		<div class="row" id="game"
@@ -43,10 +46,12 @@
 		</div>
 
 	</div>
-	<div style="text-align: center;">여기에 게임 소개가 들어갑니다.</div>
+	<div style="text-align: center;"><b style="color:red;">지뢰찾기</b>입니다.<br><br>
+	못 찾으면, 터집니다.<br><hr>
+	</div>
 	<div
 		style="text-align: center; justify-content: center; align-items: center;">
-		지뢰찾기는 랭킹 서비스를 제공하지 않습니다.</div>
+		<br>지뢰찾기는 랭킹 서비스를 제공하지 않습니다.<br><hr></div>
 	<div style="text-align: center;">
 		<%
 		String sql = "select * from minechat order by date asc;";

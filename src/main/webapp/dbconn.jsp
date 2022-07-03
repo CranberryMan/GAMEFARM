@@ -5,7 +5,8 @@
 <%
 Connection conn = null;
 try {
-	String url = "jdbc:mysql://localhost:3306/gamefarm?ServerTimeZone=Asia/Seoul";
+	String urlLocal = "jdbc:mysql://localhost:3306/gamefarm?ServerTimeZone=Asia/Seoul";
+	String url = "jdbc:mysql://121.142.150.46:3306/gamefarm?ServerTimeZone=Asia/Seoul";
 	String user = "root";
 	String pw = "1234";
 

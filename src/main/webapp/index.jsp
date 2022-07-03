@@ -26,22 +26,27 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
 	integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
 	crossorigin="anonymous"></script>
-
 </head>
-<body>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+</style>
+<body style ="background-color: #abc8ea ;font-family: 'Black Han Sans', sans-serif;">
 
 	<%@ include file="navbar.jsp"%>
-				<img src="res/img/banner.png" width="100%" height="auto" border=0>
+				<img src="res/img/new_banner.png" width="100%" height="auto" border=0>
+				<br><br><br><br>
 
 
 	<div class="container">
 		<div class="row">
+		<!-- 나중에 뭔가 집어넣을지도 모르는 여백 영역 -->
 			<div class="col-xs-12">
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-9">여기도 뭔가 들어가??</div>
-			<div class="col-md-3">광고영역</div>
+		<!-- 나중에 뭔가 집어넣을지도 모르는 여백 영역 -->
+			<div class="col-md-9"></div>
+			<div class="col-md-3"></div>
 		</div>
 
 		<%@ include file="main/main.jsp"%>

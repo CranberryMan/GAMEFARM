@@ -9,20 +9,25 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+</style>
 </head>
-<body>
+<body style ="background-color: #51555a">
 	<%@ include file="dbconn.jsp"%>
 	<%@ include file="navbar.jsp"%>
-	<img src ="res/img/banner_test.png" width="100%" height="auto" border=0>
-
+	<img src ="res/img/new_banner.png" width="100%" height="auto" border=0>
+			
 	<div class="container">
+			<!-- 나중에 뭔가 집어넣을지도 모르는 여백 영역 -->
+	
 		<div class="row">
-			<div class="col-xs-12"> 임시 지정 영역</div>
+			<div class="col-xs-12"></div>
 		</div>
 		<div class="row">
-			<div class="col-md-9"> 임시 지정 영역 </div>
-			<div class="col-md-3"> 임시 지정 영역 </div>
+			<div class="col-md-9"></div>
+			<div class="col-md-3"></div>
 		</div>
 	
 		<div class="row" id = "game" style="justify-content : center ; align-items:center;">
@@ -31,15 +36,22 @@
 	
 	</div>
 	
-	<div style = "text-align : center;">
-		여기에 게임 소개가 들어갑니다.
+	<div style = "text-align : center; font-family: 'Gugi', cursive;">
+		<br>
+		재밌는 귀여운 <b style="color:red;">비암게임</b> 입니다.<br>
+		로그인 후 게임을 시작하면 최종 점수가 기록되어<br>
+		<b style="color:red;">랭킹</b>에 도전할 수 있습니다. <br>
+		최고점을 노려봅시다.<br><br>
 	</div>
-	<div style = "text-align : center; justify-content : center ; align-items:center; ">
+	<hr>
+	<div style = "text-align : center; justify-content : center ; align-items:center; font-family: 'Gugi', cursive;">
 	<%
 		String sql = "select * from snakeRank order by score desc limit 3;";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
-		%><table style="margin-left:auto; margin-right:auto;">
+		%>
+		<br>
+		<table style="margin-left:auto; margin-right:auto; font-family: 'Gugi', cursive;" border=1>
 		<thead>
 		<tr>
 		<th>순위</th>
@@ -58,9 +70,10 @@
 		<% count++;}
 		%></tbody></table><%
 	 %>
-		여기에 게임별 랭킹이 들어갑니다.
+	 랭킹은 최대 3위까지 표시됩니다.<br><br>
+	 <hr>
 	</div>
-	<div style = "text-align : center;">
+	<div style = "text-align : center; font-family: 'Gugi', cursive;">
 		<%
 		sql = "select * from snakechat order by date asc;";
 		pstmt = conn.prepareStatement(sql);

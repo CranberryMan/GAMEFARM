@@ -11,17 +11,18 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body style ="background-color: #abc8ea">
 	<%@ include file="navbar.jsp"%>
-
-
+	<!-- 회원가입 배너 -->
+	<img src ="res/img/new_banner.png" width="100%" height="auto" border=0>
+	<br><br>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-12">배너영역</div>
+			<div class="col-xs-12"></div>
 		</div>
 		<div class="row">
-			<div class="col-md-9">여기도 뭔가 들어가??</div>
-			<div class="col-md-3">광고영역</div>
+			<div class="col-md-9"></div>
+			<div class="col-md-3"></div>
 		</div>
 	
 		<div class="row">
@@ -29,7 +30,7 @@
 	</div>
 	
 	</div>
-
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<%@ include file="footer.jsp"%>
 </body>
 </html>

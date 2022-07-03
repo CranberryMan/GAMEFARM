@@ -23,8 +23,15 @@ pstmt.close();
 conn.close();
 if (check >= 1) {
 	response.sendRedirect("../index.jsp");
-} else {
-	out.println("로그인실패 페이지로 리다이렉트 예정");
-
+} else {%>
+	<script>
+	var data = confirm("로그인실패! ID PW를 확인해 주세요.");
+	if (data == true){
+		window.history.back();
+	}
+	else{
+		window.history.back();
+	}
+	</script><%
 }
 %>

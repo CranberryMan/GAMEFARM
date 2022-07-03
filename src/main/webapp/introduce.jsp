@@ -24,7 +24,7 @@
 </head>
 <body>
 <%@ include file="navbar.jsp"%>
-	<img src="res/img/banner_test.png" width="100%" height="auto" border=0>
+	<img src="res/img/new_banner.png" width="100%" height="auto" border=0>
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">

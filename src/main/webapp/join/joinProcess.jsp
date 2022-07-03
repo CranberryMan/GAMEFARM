@@ -7,6 +7,7 @@
 	String id = request.getParameter("id");
 	String pw = request.getParameter("pw");
 	String nick = request.getParameter("nick");
+
 	int check = 0;
 	
 	String sql = "select * from member where id = ?";
