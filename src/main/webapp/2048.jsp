@@ -35,6 +35,8 @@
 	
 	<div style = "text-align : center;">
 	<br>
+	<b><조작></b><br>
+	방향키<br><br>
 	전통의 <b>시간</b> 잡아먹는 괴물<br>
 	2048입니다.
 	관리자는 4096까진 만들어 봤습니다.<br><br><hr>

@@ -37,6 +37,8 @@
 	</div>
 	
 	<div style = "text-align : center; font-family: 'Gugi', cursive;">
+		<b><조작></b><br>
+	방향키<br>
 		<br>
 		재밌는 귀여운 <b style="color:red;">비암게임</b> 입니다.<br>
 		로그인 후 게임을 시작하면 최종 점수가 기록되어<br>
